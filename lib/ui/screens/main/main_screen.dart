@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kunuz_clone/bloc/providers/bottom_navigation_bar_provider.dart';
-import 'package:kunuz_clone/ui/screens/articles_screen.dart';
-import 'package:kunuz_clone/ui/screens/home_screen.dart';
-import 'package:kunuz_clone/ui/screens/latest_screen.dart';
-import 'package:kunuz_clone/ui/screens/media_screen.dart';
+import 'package:kunuz_clone/ui/screens/main/articles_screen.dart';
+import 'package:kunuz_clone/ui/screens/main/home_screen.dart';
+import 'package:kunuz_clone/ui/screens/main/latest_screen.dart';
+import 'package:kunuz_clone/ui/screens/main/media_screen.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatelessWidget {

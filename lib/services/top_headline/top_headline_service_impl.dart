@@ -16,7 +16,9 @@ class TopHeadlinesServiceImpl implements TopHeadlinesService {
       PAGE_QRY: page.toString(),
     };
     try {
+      print('=================> inside try');
       final Uri uri = Uri.https(HOST, TOP_HEADLINES_PATH, queries);
+      print('=================> uri: $uri');
       final result = await http.get(uri, headers: _headers);
       return _createArticlesFromRawMap(json.decode(result.body));
     } catch (e) {
@@ -25,10 +27,12 @@ class TopHeadlinesServiceImpl implements TopHeadlinesService {
   }
 
   List<Articles> _createArticlesFromRawMap(Map jsonObject) {
+    print('==========> jsonObject: $jsonObject');
     final MainResponse response = MainResponse.fromJson(jsonObject);
+    print('==========> after parsing main response: $response');
     List<Articles> list = [];
     for (var article in response.articles ?? <Articles>[]) {
-      list.add(Articles.fromJson(article));
+      list.add(article);
     }
     return list;
   }
