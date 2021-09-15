@@ -12,9 +12,9 @@ class TopHeadlinesProvider extends ChangeNotifier {
 
   Future<void> loadTopHeadlineArticles() async {
     final result = await _topHeadlinesService.getTopHeadlines(_page);
-    if (result is List<Articles>) {
+    if (result is List<Articles>)
       _articles.addAll(result);
-    } else
+    else
       print('======================> result: $result');
     notifyListeners();
   }
